@@ -1,0 +1,486 @@
+/* GLOBAL BODY STYLES */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Afacad Flux', sans-serif;
+    height: 100%;
+    width: 100%;
+    color: #304674;  
+    background-color: #F5F5F4; 
+}
+
+/* SMOOTH SCROLLING FOR THE WHOLE PAGE */
+html {
+    scroll-behavior: smooth;
+}
+
+/* FADE-IN ANIMATION FOR THE HERO TEXT */
+@keyframes fadeInJump {
+    0% {
+        opacity: 0;
+        transform: translateY(40px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+/* CENTERED "FIND YOUR WAVE" TEXT */
+#heroText {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    font-size: 4.3rem;
+    font-weight: 700;
+    color: #F5F5F4;  
+    text-align: center;
+    opacity: 0;  
+    animation: fadeInJump 3s ease-out forwards;
+}
+
+/* TOP HEADER LAYOUT WITH LOGO AND NAV LINKS */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #F5F5F4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.header .logo h1 {
+    font-size: 4.8rem;
+    color: #304674;
+    margin: 0;
+}
+
+#wvzlogo {
+    height: 50px;  
+    width: auto;  
+}
+
+/* NAVIGATION LINKS STYLES */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 70px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #304674;
+    font-size: 1.6rem;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #98bad5;
+}
+
+/* HERO IMAGE CONTAINER STYLES */
+.hero-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* MAIN CONTENT AREA STYLES */
+.main-container {
+    background-color: #F5F5F4;
+    padding: 20px 0;
+}
+
+/* MAIN CONTENT CONTAINER */
+.container {
+    background-color: #F5F5F4;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* GLOBAL BUTTON STYLES */
+button {
+    padding: 10px 20px;
+    background-color: #304674;
+    color: #F5F5F4;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    font-family: 'Afacad Flux', sans-serif;
+    width: 100%;
+    max-width: 250px;
+    margin-top: 10px;
+}
+
+/* BUTTON HOVER EFFECT */
+button:hover {
+    background-color: #98bad5;
+    transform: scale(1.05); 
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* SURFBOARD LOGO BUTTON STYLES */
+.logo-press {
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 100px; 
+    height: 100px; 
+    box-shadow: none;
+    transition: transform 0.3s ease;
+}
+
+/* HOVER EFFECT FOR SURFBOARD BUTTON */
+.logo-press:hover {
+    transform: scale(1.1);  
+    transition: transform 0.3s ease;
+    box-shadow: none; 
+}
+
+/* REMOVE HOVER GLOW FOR LOGO BUTTON */
+button.logo-press:hover {
+    background-color: transparent;
+}
+
+#searchSB {
+    width: 100%;
+    height: auto;
+}
+
+/* SPIN ANIMATION FOR THE SURFBOARD */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* SURFBOARD SPIN CLASS */
+.spin-surfboard {
+    animation: spin 1s ease-in-out;
+}
+
+/* DROPDOWN MENU STYLES */
+select {
+    padding: 10px;
+    font-size: 22px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+    font-family: 'Afacad Flux', sans-serif;
+    border: 1px solid #304674;
+    color: #304674;
+}
+
+/* WAVE DATA CONTAINER STYLES */
+.wave-forecast-header {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#waveDataDisplay {
+    margin-top: 0px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    background-color: #F5F5F4;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #475458;
+    text-align: center;
+    margin: 0 auto;
+    border: 1px solid #304674;
+    overflow-x: auto;
+}
+
+/* WAVE DATA TABLE STYLES */
+#waveDataDisplay table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+#waveDataDisplay th, td {
+    padding: 5px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#waveDataDisplay th {
+    background-color: #FAC898;
+    color: #304674;
+}
+
+/* CENTER "FIND WAVES" BUTTON */
+#findWavesButtonDiv {
+    text-align: center;
+}
+
+/* REGION SELECTION BUTTONS */
+#regionSelection {
+    display: flex;
+    justify-content: space-between; 
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+#regionSelection button {
+    width: 100%;
+    max-width: 170px;
+    padding: 10px 20px;
+    font-size: 18px; 
+    border-radius: 5px;
+    background-color: #304674;
+    color: #F5F5F4;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#regionSelection button:hover {
+    background-color: #98bad5;
+    transform: scale(1.05);
+}
+
+/* DIVIDER STYLES */
+.divider {
+    width: 70%; 
+    height: 2px; 
+    background-color: #304674; 
+    margin: 40px auto;
+}
+
+/* HEADER STYLES FOR WAVE FORECAST */
+.wave-forecast-header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 3rem;
+    color: #304674;
+    margin-bottom: 20px; 
+    text-align: center;
+}
+
+#subheader {
+    font-size: 1.2rem;
+    color: #304674;
+    margin-bottom: 20px; 
+    text-align: center;
+}
+
+/* ABOUT SECTION STYLES */
+#about {
+    background-color: #F5F5F4;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: -10px;
+    border-radius: 10px;
+}
+
+.about-content {
+    background-color: #F5F5F4;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#about h2 {
+    font-size: 2.8rem;
+    color: #304674;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.4rem;
+    color: #475458;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+#beachSelection {
+    display: block;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    width: 90%;
+    max-width: 300px;
+}
+
+/* FOOTER STYLES */
+footer {
+    background-color: #304674;
+    color: #F5F5F4;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+footer .about {
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+footer .footer-links {
+    font-size: 1rem;
+}
+
+footer .footer-links a {
+    color: #F5F5F4;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+footer .footer-links a:hover {
+    color: #98bad5;
+}
+
+
+/* MOBILE RESPONSIVENESS FOR ALL DEVICES */
+@media (max-width: 768px) {
+    #about h2 {
+        font-size: 2rem;
+    }
+
+    #about p {
+        font-size: 1rem;
+    }
+
+    .container {
+        width: 100%; 
+        max-width: none; 
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 48%; 
+        margin-top: 10px;
+    }
+
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%; 
+        padding: 10px; 
+    }
+
+    #heroText {
+        font-size: 3rem;
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column; 
+        align-items: center;
+        gap: 20px;
+    }
+
+    button {
+        width: 100%; 
+        max-width: none; 
+        padding: 15px 0; 
+    }
+
+    .hero-container {
+        height: 60vh; 
+    }
+
+    .hero-image {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    footer {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #heroText {
+        font-size: 2 rem;
+    }
+
+    .container {
+        padding: 5px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+
+    .logo-press {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hero-container {
+        height: 50vh;  
+    }
+
+    .hero-image {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    button {
+        width: 100%;
+        max-width: none;
+        padding: 15px 0; 
+    }
+}
